@@ -9,19 +9,19 @@ app.get('/', (req, res) => {
   res.json([
     {
       "id":"1",
-      "title":"Movie Review: The Perk of Being a Wallflower"
+      "title":"Album Review: When we all Fall asleep where do we go?"
     },
     {
       "id":"2",
-      "title":"Game Review: Need for Speed"
+      "title":"Book Review: How can we escape this labyrnith of suffering?"
     },
     {
       "id":"3",
-      "title":"Show Review: Looking for Alaska"
+      "title":"Documentary Review: How can we escape the rat race?"
     }
   ])
 })
 
 app.listen(4000, () => {
-  console.log('listening for requests on port 4000')
+  console.log('connected on port 4000')
 })

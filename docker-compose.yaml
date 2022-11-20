@@ -1,16 +1,30 @@
-version: "3.8"
+# Version of Docker-compose
+version: '3.9'
 services:
-  api:
-    build: ./api
-    container_name: api_c
+  # Add the node-js service
+  node:
+  # Location to the node.js dockerfile
+    build: 
+      context: ./node
+        # Name of the dockerfile
+      dockerfile: Dockerfile
+    container_name: node-container
     ports:
+       # Host port:Container port
       - '4000:4000'
     volumes:
-      - ./api:/app
+      # Bind-mounts configuration
+      - ./node:/app
+      # Ignoring any changes made in "node_modules" folder
       - ./app/node_modules
-  myblog:
-    build: ./myblog
-    container_name: myblog_c
+  react:
+  # Location to the react.js dockerfile
+    build: 
+      context: ./react
+        # Name of the dockerfile
+      dockerfile: Dockerfile
+    container_name: react-container
     ports:
+     # Host port:Container port
       - '3000:3000'
     stdin_open: true
